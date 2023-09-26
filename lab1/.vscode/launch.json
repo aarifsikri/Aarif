@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open part 2.html",
-            "file": "c:\\Users\\anshs\\OneDrive\\Documents\\GitHub\\Aarif\\lab1\\part 2.html"
+            "file": "./index.html"
         }
     ]
 }
