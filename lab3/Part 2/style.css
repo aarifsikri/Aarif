@@ -1,5 +1,21 @@
 html {
   font-family: sans-serif;
 }
+div {
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(107, 106, 106);
+  
+ 
+  width: 400px;
+  height: 300px;
+  border: 3px solid rgb(144, 10, 10);
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px  rgb(145, 145, 147), inset -2px -2px 4px rgb(0, 0, 0);
+  
+  color: #ffffff;
+  background-color: rgb(165, 10, 10); 
+  font-size : 3 rem;
+  line-height: 250px;
 
+}
 /* Your CSS below here */
