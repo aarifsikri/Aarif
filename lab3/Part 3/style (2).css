@@ -52,4 +52,69 @@ header, footer {
   border-bottom: 5px solid #a66;
 }
 
+@font-face {
+  font-family: 'open_sans';
+  src: url();
+}
+
+@font-face {
+  font-family: 'open_sans' ;
+  src: url()
+}
+
+@font-face {
+  font-family: 'open_sans' ;
+  src: url()
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  font-family: 'open sans', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+h2{
+  font-size: 30px;
+  font-family:"open-sans",sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+a{
+  color: rgb(164,79,79);
+  text-decoration:underline;
+}
+
+a:focus{
+  outline: none;
+  color: #c56d42;
+}
+ a:hover{
+  color: #f7b08c;
+  a[href^="http"]{
+    background: url("\external-link-icon-png-28.jpg")
+    no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+  }
+ }
+ ul,ol{
+  margin: 24px;
+  padding: 24px;
+  list-style: bold;
+ }
+ .special {
+display: block;
+padding: 15px;
+font-family: 'franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 600;
+font-style: italic;
+line-height: 5em;
+border: 5px solid solid rgb(18,16,16);
+text-align: center;
+margin-top: 2em;
+ }
+
+
 /* WRITE YOUR CODE BELOW HERE */
