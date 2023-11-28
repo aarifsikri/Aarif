@@ -16,22 +16,17 @@ const insertY =  ['the soup kitchen', 'Disneyland','the White House'];
 const insertZ = ['spontaneously combusted','melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
 
 
-
-randomize.addEventListener('click', result);
-
 function result() {
+  let finalstoryy = storyText;
+  xItem = randomValueFromArray(insertX);
+  yItem = randomValueFromArray(insertY);
+  zItem = randomValueFromArray(insertZ);
+
+  finalstoryy = finalstoryy.replaceAll(":insertx:", xItem).replaceAll(":inserty:", yItem).replaceAll(":insertz:", zItem);
 
   if(customName.value !== '') {
     const name = customName.value;
-
+    finalstoryy = finalstoryy.replaceAll("Bob", name);
   }
 
-  if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
-
-  }
-
-  story.textContent = ;
-  story.style.visibility = 'visible';
-}
+ 
