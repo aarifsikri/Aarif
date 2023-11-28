@@ -58,7 +58,24 @@ class Ball {
     this.xaxis += this.velocityx;
     this.yaxis += this.velocityy;
   }
-}
+  collisionDetect(balls) {
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.xaxis - ball.xaxis;
+        const dy = this.yaxis - ball.yaxis;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+  
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
+  
+  }
+  
+
+
 
 
 
@@ -86,6 +103,7 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect(balls); // Pass the balls array to collisionDetect
   }
 
   requestAnimationFrame(loop);
