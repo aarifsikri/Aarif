@@ -18,12 +18,15 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
+
+
+
 class Ball {
   constructor(xaxis, yaxis, velocityx, velocityy, color, size) {
-    this.xaxis = x;
-    this.yaxis = y;
+    this.xaxis = xaxis;
+    this.yaxis = yaxis;
     this.velocityx = velocityx;
-    this.velocityy  = velocityy;
+    this.velocityy = velocityy;
     this.color = color;
     this.size = size;
   }
@@ -34,40 +37,39 @@ class Ball {
     ctx.arc(this.xaxis, this.yaxis, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
-  
+
   update() {
     if ((this.xaxis + this.size) >= width) {
-      this.velocityx= -(this.velocityx);
+      this.velocityx = -Math.abs(this.velocityx); // Make sure the sign is correct
     }
-  
+
     if ((this.xaxis - this.size) <= 0) {
-      this.velocityx = -(this.velocityx);
+      this.velocityx = Math.abs(this.velocityx);
     }
-  
+
     if ((this.yaxis + this.size) >= height) {
-      this.velocityy= -(this.velocityy);
+      this.velocityy = -Math.abs(this.velocityy);
     }
-  
-    if ((this.yaxis- this.size) <= 0) {
-      this.velocityy = -(this.velocityy);
+
+    if ((this.yaxis - this.size) <= 0) {
+      this.velocityy = Math.abs(this.velocityy);
     }
-  
-    this.x += this.velocityx;
-    this.y += this.velocityy;
+
+    this.xaxis += this.velocityx;
+    this.yaxis += this.velocityy;
   }
-
-
-
-
 }
+
+
+
+
+
 const balls = [];
 
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
-    random(0 + size, width - size),
+     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
     random(-7, 7),
