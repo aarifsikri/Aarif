@@ -7,26 +7,33 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-
 const storyText = 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
 
-
 const insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
-const insertY =  ['the soup kitchen', 'Disneyland','the White House'];
-const insertZ = ['spontaneously combusted','melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
-
+const insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
+const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
 
 function result() {
-  let finalstoryy = storyText;
-  xItem = randomValueFromArray(insertX);
-  yItem = randomValueFromArray(insertY);
-  zItem = randomValueFromArray(insertZ);
+  let finalStory = storyText;
+  const xItem = randomValueFromArray(insertX);
+  const yItem = randomValueFromArray(insertY);
+  const zItem = randomValueFromArray(insertZ);
 
-  finalstoryy = finalstoryy.replaceAll(":insertx:", xItem).replaceAll(":inserty:", yItem).replaceAll(":insertz:", zItem);
+  finalStory = finalStory.replaceAll(":insertx:", xItem).replaceAll(":inserty:", yItem).replaceAll(":insertz:", zItem);
 
-  if(customName.value !== '') {
+  if (customName.value !== '') {
     const name = customName.value;
-    finalstoryy = finalstoryy.replaceAll("Bob", name);
+    finalStory = finalStory.replaceAll("Bob", name);
   }
 
- 
+  const ukCheckbox = document.getElementById("uk");
+  if (ukCheckbox && ukCheckbox.checked) {
+    const weight = Math.round(300 / 14) + ' kilogram';
+    const temperature = Math.round((94 - 32) * (5 / 9)) + ' Celsius';
+    finalStory = finalStory.replaceAll("94 fahrenheit", temperature);
+    finalStory = finalStory.replaceAll("300 pounds", weight);
+  }
+
+  story.textContent = finalStory;
+  story.style.visibility = 'visible';
+}
