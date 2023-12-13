@@ -1,0 +1,425 @@
+/* || General setup */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 9px;
+  background-color: #ddddee;
+}
+
+body {
+  width: 80%;
+  min-width: 1024px;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Sonsie One', cursive;
+  color: #1d1414;
+}
+
+p, input, li, table, label, .transcript {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #917373;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+  
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li, table, .transcript {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+/* The original contrast was 4.09 with green background.*/
+nav, article, footer, .secondary {
+  background-color: white;
+}
+
+article, footer, .secondary {
+  padding: 10px 30px;
+}
+
+article {
+  margin-right: 10px;
+  /* added */
+  min-width: 560px;
+}
+
+nav {
+  height: 50px;
+  /*background-color: ff80ff;*/
+  display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
+  /*added */
+  justify-content: space-around;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+  /*added*/
+  min-width:154px;  
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+nav .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+  /*added*/
+  min-width: 368px; 
+  max-width: 408px;
+}
+
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.search input[type="search"] {
+  flex: 3;
+}
+
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #3e1b1b;
+  border: 0;
+  color: rgb(194, 177, 177);
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article {
+  flex: 5;
+}
+
+.secondary {
+  flex: 2;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+/* Table styling */
+
+table {
+  width: 100%;
+  background-color: #ddddee;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ddeeff;
+}
+
+/* styling content images and audio */
+
+img, audio {
+  display: block;
+  margin: 0 auto;
+}
+
+audio {
+  width: 500px;
+}
+
+/* Comments styling */
+
+.comments {
+  background-color: #ddeeff;
+  padding: 10px;
+}
+
+.show-hide {
+  cursor: pointer;
+}
+
+.comments h2 {
+  font-size: 2rem;
+}
+
+.comments h2:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  align-self: center;
+  flex: 2;
+  text-align: right;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+.show-hide {
+  text-align: center;
+  width: 150px;
+}
+
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
+}
+
+/* Transcript control */
+audio {
+  margin: 0;
+}
+
+.transcript-control {
+  margin: 10px 0;
+}
+
+.transcript {
+  margin-left: 5px;
+  display: none;
+}
+
+/* responsive design */
+
+.hamIcon {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  grid-row: 2;
+  justify-self: center;
+  display: none;
+  cursor: pointer;
+  padding-left: 10px;
+  position: relative;
+}
+
+.hamIcon .iconImage {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+@media screen and (max-width:1023px) {
+  body {
+    min-width:600px;
+    max-width:1000px;
+    display: grid;
+    grid-template-rows: 150px 120px 1fr 80px;
+    justify-content: space-around;
+  }
+
+  header {
+    grid-row: 1;
+  }
+
+  nav {
+    grid-row:2;
+    flex-wrap: wrap;
+  }
+
+  nav .search {
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  main {
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: 1fr 250px;
+    grid-gap: 10px;
+    justify-content: space-around;
+  }
+
+  article {
+    margin-right: 0;
+    grid-row: 1;
+  }
+
+  .secondary {
+    grid-row: 2;
+  }
+
+  footer {
+    grid-row: 4;
+  }
+  
+}
+
+@media screen and (min-width: 616px) {
+  nav ul {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  body, article, nav .search {
+    min-width: 0;
+  }
+
+  body {
+    width: 90%;
+    grid-template-rows: 150px 70px 1fr 100px;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+  }
+
+  .hamIcon {
+    grid-row: 1;
+    display: block;
+  }
+
+  nav .search {
+    grid-row: 1;
+    margin-top: 0;
+    min-width: 100px;
+  }
+
+  nav ul {
+    margin-top: 0;
+    background-color: rgba(255, 255, 180, 0.95);
+    grid-column: 1/3;
+    grid-row: 2;
+    display: initial;
+    visibility: hidden;
+  }
+
+  nav ul li {
+    display: block;
+    padding: 5px 0;
+    border: 0.5px solid #333333;
+  }
+
+  article {
+    padding: 10px 15px; 
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  img {
+    margin-left: 0;
+  }
+
+  audio {
+    width: initial;
+    min-width: 290px;
+  }
+}
+
+@media screen and (max-width:522px) {
+  body {
+    grid-template-rows: 200px 70px 1fr 100px;
+  }
+}
+
+@media screen and (max-width:382px) {
+  body {
+    grid-template-rows: 250px 70px 1fr 100px;
+  }
+}
